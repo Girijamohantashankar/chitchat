@@ -32,7 +32,7 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', { mobile: fullMobileNumber, password });
+      const response = await axios.post('https://chitchat-backend-0pu0.onrender.com/api/auth/login', { mobile: fullMobileNumber, password });
       localStorage.setItem('token', response.data.token); 
       setIsAuthenticated(true); 
       toast.success('Logged in successfully'); 

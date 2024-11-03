@@ -14,7 +14,7 @@ import { IoSend } from "react-icons/io5";
 import CircularProgress from "@mui/material/CircularProgress";
 import "../styles/Chat.css";
 import "../styles/emoji-mart.css";
-const socket = io("http://localhost:5000", {
+const socket = io("https://chitchat-backend-0pu0.onrender.com", {
   transports: ["websocket"],
 });
 
@@ -50,7 +50,7 @@ function Chat() {
     const fetchMessages = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/chat/messages/${friend.friendId}`,
+          `https://chitchat-backend-0pu0.onrender.com/api/chat/messages/${friend.friendId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -167,7 +167,7 @@ function Chat() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/chat/send",
+        "https://chitchat-backend-0pu0.onrender.com/api/chat/send",
         messageData,
         {
           headers: {
@@ -221,7 +221,7 @@ function Chat() {
   };
   const handleDeleteMessage = async (messageId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/chat/delete/${messageId}`, {
+      await axios.delete(`https://chitchat-backend-0pu0.onrender.com/api/chat/delete/${messageId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

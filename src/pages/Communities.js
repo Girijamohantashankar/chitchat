@@ -7,13 +7,13 @@ function Communities() {
   const [users, setUsers] = useState([]); 
   const [requests, setRequests] = useState([]); 
   const [requestStatus, setRequestStatus] = useState({}); 
-  const userId = localStorage.getItem("userId"); // Get the current user ID
+  const userId = localStorage.getItem("userId"); 
 
   useEffect(() => {
       const fetchUsers = async () => {
         try {
           const token = localStorage.getItem("token"); 
-          const response = await axios.get("http://localhost:5000/api/users", {
+          const response = await axios.get("https://chitchat-backend-0pu0.onrender.com/api/users", {
             headers: {
               Authorization: `Bearer ${token}`, 
             },
@@ -27,7 +27,7 @@ function Communities() {
     const fetchRequests = async () => {
       try {
         const token = localStorage.getItem("token"); 
-        const response = await axios.get("http://localhost:5000/api/friends/requests", {
+        const response = await axios.get("https://chitchat-backend-0pu0.onrender.com/api/friends/requests", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -49,7 +49,7 @@ function Communities() {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        `http://localhost:5000/api/friends/send-request/${userId}`,
+        `https://chitchat-backend-0pu0.onrender.com/api/friends/send-request/${userId}`,
         {},
         {
           headers: {
@@ -73,7 +73,7 @@ function Communities() {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.put(
-          `http://localhost:5000/api/friends/update-request/${requestId}`,
+          `https://chitchat-backend-0pu0.onrender.com/api/friends/update-request/${requestId}`,
           { status },
           {
             headers: {

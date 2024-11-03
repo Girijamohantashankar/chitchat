@@ -17,7 +17,7 @@ function Settings() {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/users/me', {
+        const response = await axios.get('https://chitchat-backend-0pu0.onrender.com/api/users/me', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
           },
@@ -57,7 +57,7 @@ function Settings() {
         downloadURL = await getDownloadURL(storageRef);
       }
       const response = await axios.put(
-        `http://localhost:5000/api/users/${user._id}`,
+        `https://chitchat-backend-0pu0.onrender.com/api/users/${user._id}`,
         { name: user.name, profilePic: downloadURL },
         {
           headers: {

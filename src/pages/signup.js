@@ -33,7 +33,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/signup', { name, mobile: fullMobileNumber, password });
+      const response = await axios.post('https://chitchat-backend-0pu0.onrender.com/api/auth/signup', { name, mobile: fullMobileNumber, password });
       localStorage.setItem('token', response.data.token);
       toast.success('User created successfully!'); 
       navigate('/'); 

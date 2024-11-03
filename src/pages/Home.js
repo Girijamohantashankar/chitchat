@@ -19,7 +19,7 @@ function Home() {
         const token = localStorage.getItem("token");
 
         const friendsResponse = await axios.get(
-          `http://localhost:5000/api/friends/accepted-requests`,
+          `https://chitchat-backend-0pu0.onrender.com/api/friends/accepted-requests`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -29,7 +29,7 @@ function Home() {
         setAcceptedFriends(friendsResponse.data);
 
         const messagesResponse = await axios.get(
-          `http://localhost:5000/api/friends/last-messages`,
+          `https://chitchat-backend-0pu0.onrender.com/api/friends/last-messages`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
