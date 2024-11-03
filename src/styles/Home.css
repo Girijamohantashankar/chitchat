@@ -1,0 +1,85 @@
+.accepted-friends-list {
+  list-style-type: none;
+  padding: 0;
+  max-height: 500px;
+    overflow: auto;
+}
+
+.friend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.friend-profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.friend-info {
+  display: flex;
+    align-items: end;
+    justify-content: space-between;
+    width: 82%;
+}
+
+.friend-name {
+  font-weight: bold;
+}
+
+.last-seen {
+  font-size: 0.9em;
+  color: gray;
+}
+.friend-item {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  margin-top: 17px;
+  justify-content: center;
+}
+
+.search-input {
+  width: 95%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-right: 10px;
+  height: 40px;
+  font-size: 16px;
+  outline: none;
+  padding-left: 10px;
+}.search-input:focus,.search-input:hover{
+    border: 1px solid #605de4;
+}
+
+.search-icon {
+  color: gray;
+  cursor: pointer;
+  font-size: 1.2em;
+  position: absolute;
+  right: 30px;
+}
+.loading{
+    text-align: center;
+    padding-top: 40px;
+}
+.title_name{
+  flex-direction: column;
+  display: flex;
+}.time_stap{
+  color: #6f6f6f;
+  font-size: 12px;
+}
+.last-message{
+  font-size: 14px;
+  padding-top: 5px;
+}

@@ -1,0 +1,112 @@
+.emoji-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.emoji-picker {
+  position: absolute;
+  bottom: 134px;
+  right: 13px;
+  z-index: 100;
+}
+.chat-container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI Emoji",
+    "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+}
+.attachment-preview {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  margin-bottom: 10px;
+  background-color: #f0f0f0; 
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.attachment-preview-img {
+  width: 50px; 
+  height: 50px;
+  border-radius: 5px;
+  object-fit: cover;
+  margin-right: 10px; 
+}
+
+.attachment-note-input {
+  flex: 1;
+  padding: 6px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  background-color: #fff;
+  color: #333;
+}
+
+.remove-attachment-button {
+  margin-left: 10px;
+  background: none;
+  border: none;
+  color: #ff4d4d; 
+  font-size: 18px;
+  cursor: pointer;
+  outline: none;
+}
+
+.remove-attachment-button:hover {
+  color: #e60000;
+}
+.upload-progress-container {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  bottom: 150px;
+  left: 40%;
+}
+.percentage {
+  margin-top: -200px;
+}
+
+.progress-circle {
+  stroke: #4caf50;
+  stroke-width: 4;
+  fill: none;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.attachment-preview.input_preview_img {
+  position: absolute;
+  bottom: 118px;
+  left: 0;
+  right: 0;
+  margin: 0 5px;
+}
+.attachment-note-input.note_inpu {
+  visibility: hidden;
+}
+.attachment-preview.send_attachment {
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 14px;
+}
+.btn_b {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  bottom: -20px;
+}
+.btn_b button {
+  border: none;
+  background-color: transparent;
+}

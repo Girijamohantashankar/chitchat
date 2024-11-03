@@ -1,0 +1,138 @@
+.communities {
+  padding: 20px;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.tab.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.tab-content {
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  max-height: 500px;
+  overflow: auto;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.user-profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-name {
+  flex: 1;
+}
+
+.send-request {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.send-request:hover {
+  background-color: #0056b3;
+}
+
+.send-request {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 7px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.send-request.pending {
+  background-color: #ff9800;
+  cursor: not-allowed;
+}
+
+.send-request.accepted {
+  background-color: #2196f3;
+  cursor: not-allowed;
+}
+
+.send-request:disabled {
+  background-color: #d3d3d3;
+  color: #a9a9a9;
+}.request-item {
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: space-between; /* Space between name and buttons */
+  margin-bottom: 10px; /* Space between items */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.friend-profile-pic {
+  width: 40px; /* Set the width for profile pictures */
+  height: 40px; /* Set the height for profile pictures */
+  border-radius: 50%; /* Make it circular */
+  margin-right: 10px; /* Space between picture and name */
+}
+
+.friend-name {
+  flex: 1; /* Allow this to take available space */
+  margin-right: 20px; /* Space between name and buttons */
+}
+
+.status-buttons {
+  display: flex; /* Align buttons horizontally */
+}
+
+.status-buttons button {
+  margin-left: 5px; /* Space between buttons */
+}
+
+.status-buttons button {
+  margin-left: 5px; /* Space between buttons */
+}
+.accept_btn,.reject_btn{
+  padding: 7px 7px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}.reject_btn{
+  color: #fff;
+  background-color: #c30a0a;
+}.accept_btn{
+  color: #fff;
+  background-color: #4caf50;
+}

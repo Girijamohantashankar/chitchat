@@ -1,0 +1,91 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.settings h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.settings .user-details {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.settings .user-profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.settings button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  margin-right: auto;
+  transition: background-color 0.3s ease;
+}
+
+.settings button:hover {
+  background-color: #0056b3;
+}
+
+.settings .user-info {
+  width: 100%;
+}
+
+.settings label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.settings input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+input[type="text"]:disabled {
+  background-color: #f0f0f0;
+  color: #666;
+}
+
+.profile_group {
+  text-align: left;
+}
+.pencil_icon {
+  position: absolute;
+  margin-left: 23px;
+  margin-top: -30px;
+}
+.save_btn_group {
+  display: flex;
+  gap: 10px;
+}
+.logout_btn{
+  display: flex;
+ gap: 10px;
+}
+button.logout-button{
+  background-color: #c10000;
+}
