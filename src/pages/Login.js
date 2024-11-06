@@ -18,6 +18,7 @@ const Login = () => {
   const [selectedCountryCode, setSelectedCountryCode] = useState('+91'); 
   const [mobile, setMobile] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false); 
   const navigate = useNavigate(); 
   const { setIsAuthenticated } = useAuth(); 
 
@@ -31,6 +32,7 @@ const Login = () => {
       return;
     }
 
+    setLoading(true); 
     try {
       const response = await axios.post('https://chitchat-backend-0pu0.onrender.com/api/auth/login', { mobile: fullMobileNumber, password });
       localStorage.setItem('token', response.data.token); 
@@ -39,6 +41,8 @@ const Login = () => {
       navigate('/'); 
     } catch (err) {
       toast.error('Invalid credentials'); 
+    } finally {
+      setLoading(false); 
     }
   };
 
@@ -69,7 +73,9 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">Login</button>
+        <button type="submit" disabled={loading}> 
+          {loading ? 'Logging in...' : 'Login'} 
+        </button>
         <p className="auth-link">
           Don't have an account? <Link to="/signup">Sign Up</Link>
         </p>

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { isValidPhoneNumber } from 'libphonenumber-js';
-import { Link, useNavigate } from 'react-router-dom'; 
-import { ToastContainer, toast } from 'react-toastify'; 
-import 'react-toastify/dist/ReactToastify.css'; 
+import { Link, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../styles/Auth.css';
-import { useAuth } from '../AuthContext'; 
+import { useAuth } from '../AuthContext';
 
 const countryCodes = [
   { code: '+91', name: 'India' },
@@ -16,33 +16,39 @@ const countryCodes = [
 
 const Signup = () => {
   const [name, setName] = useState('');
-  const [selectedCountryCode, setSelectedCountryCode] = useState('+91'); 
+  const [selectedCountryCode, setSelectedCountryCode] = useState('+91');
   const [mobile, setMobile] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate(); 
-  const { setIsAuthenticated } = useAuth(); 
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const { setIsAuthenticated } = useAuth();
 
   const handleSignup = async (e) => {
     e.preventDefault();
+    setLoading(true); 
 
     const fullMobileNumber = selectedCountryCode + mobile;
 
     if (!isValidPhoneNumber(fullMobileNumber, selectedCountryCode)) {
-      toast.error('Please enter a valid mobile number'); 
+      toast.error('Please enter a valid mobile number');
+      setLoading(false); 
       return;
     }
 
     try {
       const response = await axios.post('https://chitchat-backend-0pu0.onrender.com/api/auth/signup', { name, mobile: fullMobileNumber, password });
       localStorage.setItem('token', response.data.token);
-      toast.success('User created successfully!'); 
-      navigate('/'); 
+      toast.success('User created successfully!');
+      setIsAuthenticated(true);
+      navigate('/');
     } catch (err) {
       if (err.response) {
         toast.error(err.response.data.error || 'Error creating user');
       } else {
         toast.error('Error creating user');
       }
+    } finally {
+      setLoading(false); 
     }
   };
 
@@ -80,12 +86,15 @@ const Signup = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">Sign Up</button>
+        <button type="submit" disabled={loading}>
+          {loading ? 'Signing Up...' : 'Sign Up'}
+        </button>
         <p className="auth-link">
           Already have an account? <Link to="/login">Login</Link>
         </p>
       </form>
-      <ToastContainer /> 
+      <ToastContainer />
+      {loading && <div className="loader"></div>} 
     </div>
   );
 };
